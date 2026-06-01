@@ -17,7 +17,6 @@ const router = express.Router();
 // GET /api/products - Obtener todos los productos del kiosko
 router.get('/products', getAllProducts);
 
-// GET /api/products/category/:category - Filtrar productos por categoría
 // Ejemplo: /api/products/category/hamburguesas
 router.get('/products/category/:category', getProductsByCategory);
 

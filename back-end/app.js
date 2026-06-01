@@ -1,6 +1,9 @@
+import dns from 'dns';
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+
+dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 // Importar conexión a BD y rutas
 import connectDB, { disconnectDB } from './db/connect.js';

@@ -86,6 +86,6 @@ productSchema.virtual('formattedPrice').get(function() {
 // Configurar JSON para incluir virtuals
 productSchema.set('toJSON', { virtuals: true });
 
-const Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model('Product', productSchema, 'crud_kiosco');
 
 export default Product;

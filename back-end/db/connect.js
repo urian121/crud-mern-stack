@@ -5,19 +5,12 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Configuración de conexión
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/crud-mern-stack';
-
-// Opciones de conexión
-const options = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
+const MONGODB_URI = process.env.MONGO_URL || process.env.MONGODB_URI || 'mongodb://localhost:27017/crud-mern-stack';
 
 // Función para conectar a MongoDB
 export const connectDB = async () => {
   try {
-    // Conectar a la base de datos
-    await mongoose.connect(MONGODB_URI, options);
+    await mongoose.connect(MONGODB_URI);
     
     console.log('✅ MongoDB conectado exitosamente');
     console.log(`📊 Base de datos: ${mongoose.connection.name}`);
