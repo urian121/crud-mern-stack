@@ -95,7 +95,6 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <h1 className="text-3xl font-bold text-gray-900">🍔 Kiosko API</h1>
-            <div className="text-sm text-gray-500">Sistema de Gestión de Productos</div>
           </div>
         </div>
       </header>
@@ -170,19 +169,20 @@ function App() {
               Productos {!loading && `(${products.length})`}
             </h2>
 
-            {loading && <p className="text-gray-500">Cargando...</p>}
-
-            {error && (
-              <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg p-4">
-                {error}
-              </div>
-            )}
-
-            {!loading && !error && products.length === 0 && (
-              <p className="text-gray-500">No hay productos. ¡Crea el primero!</p>
-            )}
-
             <div className="h-[calc(100vh-12rem)] overflow-y-auto pr-1">
+
+              {loading && <p className="text-gray-500 text-center pt-16">Cargando...</p>}
+
+              {error && (
+                <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg p-4 text-center">
+                  {error}
+                </div>
+              )}
+
+              {!loading && !error && products.length === 0 && (
+                <p className="text-gray-500 text-center pt-16">No hay productos. ¡Crea el primero!</p>
+              )}
+
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                 {products.map(product => (
                   <div
